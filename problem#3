@@ -1,0 +1,4 @@
+
+Var $1 = $( cat wages.csv | cut -d , -f 3,4 | tr "," " " | sort -V | grep "16 "| head -1 | cut -d " " -f)
+Var $2 = $(cat wages.csv | cut -d , -f 3,4 | tr "," " " | sort -V | grep "16 "| head -1 | cut -d " " -f) 
+echo "$val1- $val2" |bc
