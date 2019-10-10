@@ -1,0 +1,7 @@
+cat wages.csv | awk '{FS=" "}{if ($2=='12'){print $1 $2 $3 $4}}' > 12.csv
+cat wages.csv | awk '{FS=" "}{if ($2=='16'){print $1 $2 $3 $4}}' > 16.csv
+cat 12.csv | awk '{FS=" "}{ print $4 }' | sort –g >12sort.csv
+cat 16.csv | awk '{FS=" "}{ print $4 }' | sort –g >16sort.csv
+cat 12sort.csv | awk 'NR==1' | >12s.csv
+cat 16sort.csv | awk 'NR==1' | >16s.csv
+git diff 12s.csv 16s.csv
